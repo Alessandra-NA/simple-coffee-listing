@@ -9,7 +9,7 @@ function ProductCard({ product }) {
         product.popular &&
         <div className='tag px-3 py-1 text-xs bg-yellow w-fit rounded-full text-black capitalize absolute left-2 top-2'>Popular</div>
       }
-      <img src={require(`../assets/${product.name}.webp`)} alt={product.name}
+      <img src={product.image} alt={product.name}
            className='rounded-2xl w-64 h-40 object-cover'
       />
       <div className="flex justify-between">
