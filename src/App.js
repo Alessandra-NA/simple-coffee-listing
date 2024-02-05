@@ -23,9 +23,9 @@ function App() {
    }
 
    return (
-      <div className="App text-white bg-black h-full font-medium">
+      <div className="App text-white bg-black min-h-dvh font-medium">
          <div style={{ backgroundImage: `url(${bg})` }} className='image w-full h-72 bg-cover' />
-         <div className='-mt-32 relative bg-dark-gray sm:w-4/6 mx-auto  py-20 rounded-xl xl:w-10/12 xl:max-w-6xl'>
+         <div className='-mt-32 relative bg-dark-gray sm:w-4/6 mx-auto  py-20 rounded-xl xl:w-10/12 xl:max-w-6xl overflow-hidden'>
             <h1 className='font-bold text-3xl text-center relative w-fit mx-auto'>
                <p className='z-10 relative'>Our Collection</p>
                <img className="absolute -top-12 left-28" src={vector} alt="" />
