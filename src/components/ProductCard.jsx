@@ -17,8 +17,13 @@ function ProductCard({ product }) {
           <h1 className='text-white text-base my-3'>{product.name}</h1>
           <div className='flex gap-1 text-sm'>
             <img src={product.votes > 0 ? fullStar : emptyStar} alt="stars" className='inline w-5'/>
-            <>{product.rating} </>
-            <p className='text-light-gray'>({product.votes} votes)</p>
+            {
+               product.votes === 0 ? <p className='text-light-gray'>No ratings</p> :
+               <div className='flex gap-1'>
+                  <>{product.rating} </>
+                  <p className='text-light-gray'>({product.votes} votes)</p>
+               </div>
+            }
           </div>
         </div>
          <div className="flex flex-col items-end">
