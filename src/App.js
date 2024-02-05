@@ -3,7 +3,7 @@ import './App.css';
 import ProductList from './components/ProductList';
 import bg from './assets/bg-cafe.jpg';
 import vector from './assets/vector.svg';
-import data from './data';
+import data from './data/simple-coffee-listing.json';
 import { useState } from 'react';
 
 
@@ -15,7 +15,7 @@ function App() {
    const filterProducts = (filterName) => {
       setFilter(filterName);
       if (filterName === 'available') {
-         const newList = data.filter(product => product.status === 'available')
+         const newList = data.filter(product => product.available)
          setFilteredData(newList);
       } else if (filterName === 'all') {
          setFilteredData(data);
@@ -26,7 +26,6 @@ function App() {
       <div className="App text-white bg-black h-full font-medium">
          <div style={{ backgroundImage: `url(${bg})` }} className='image w-full h-72 bg-cover' />
          <div className='-mt-32 relative bg-dark-gray sm:w-4/6 mx-auto  py-20 rounded-xl xl:w-10/12 xl:max-w-6xl'>
-
             <h1 className='font-bold text-3xl text-center relative w-fit mx-auto'>
                <p className='z-10 relative'>Our Collection</p>
                <img className="absolute -top-12 left-28" src={vector} alt="" />

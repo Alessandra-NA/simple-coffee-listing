@@ -6,8 +6,8 @@ function ProductCard({ product }) {
   return (
     <div className='card w-fit relative mx-auto'>
       {
-        product.tag !== '' &&
-        <div className='tag px-3 py-1 text-xs bg-yellow w-fit rounded-full text-black capitalize absolute left-2 top-2'>{product.tag}</div>
+        product.popular &&
+        <div className='tag px-3 py-1 text-xs bg-yellow w-fit rounded-full text-black capitalize absolute left-2 top-2'>Popular</div>
       }
       <img src={require(`../assets/${product.name}.webp`)} alt={product.name}
            className='rounded-2xl w-64 h-40 object-cover'
@@ -27,9 +27,9 @@ function ProductCard({ product }) {
           </div>
         </div>
          <div className="flex flex-col items-end">
-              <p className='price my-2 px-2 py-1 rounded-lg h-fit text-black font-bold bg-mint text-sm w-fit'>${product.price.toFixed(2)}</p>
+              <p className='price my-2 px-2 py-1 rounded-lg h-fit text-black font-bold bg-mint text-sm w-fit'>{product.price}</p>
               {
-                 product.status !== 'available' &&
+                 !product.available &&
                  <p className='text-sm text-orange mt-1'>Sold out</p>
               }
          </div>
